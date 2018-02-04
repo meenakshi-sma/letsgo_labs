@@ -1,4 +1,4 @@
-# CLI with Flags Lab
+# LetsGo! Fizzbuzz Lab...
 
 ## Mission
 
