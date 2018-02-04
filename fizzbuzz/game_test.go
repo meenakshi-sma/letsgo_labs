@@ -1,4 +1,4 @@
-package main
+package fizzbuzz
 
 import (
 	"testing"
@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestFizzBuzz(t *testing.T) {
+func TestCompute(t *testing.T) {
 	uc := map[int]string{
 		0:  "FizzBuzz",
 		1:  "1",
@@ -17,6 +17,6 @@ func TestFizzBuzz(t *testing.T) {
 	}
 
 	for k, v := range uc {
-		assert.Equal(t, v, FizzBuzz(k))
+		assert.Equal(t, v, compute(k))
 	}
 }

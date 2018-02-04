@@ -1,15 +1,16 @@
-package main
+// FizzBuzz game calculator
+package fizzbuzz
 
 import (
 	"fmt"
 )
 
-/*
-FizzBuzz returns `FizzBuzz` is number div by 3 and 5.
- Fizz is div by 3.
- Buzz if div by 5 or number otherwise
-*/
-func FizzBuzz(n int) (s string) {
+// compute returns a FizzBuzz number based on given inputs.
+// Returns `FizzBuzz` if number div by 3 and 5.
+// Fizz if div by 3.
+// Buzz if div by 5
+// Otherwise the given number
+func compute(n int) (s string) {
 	switch {
 	case n%3 == 0 && n%5 == 0:
 		s = "FizzBuzz"

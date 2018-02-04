@@ -1,18 +1,45 @@
-# LetsGo! Fizzbuzz Lab...
+# LetsGo! Testing Fizzbuzz Lab...
 
 ## Mission
 
-Leveraging the code from the greeter lab, create a program that
-takes in parameters for the user name and age and display the
-message. If no flags are specified, the default user is "No one"
-and default age is of course 42!
+> Write and test a FizzBuzz game!
 
-## Usage
+* In a FizzBuzz Game, children count up from 1
+  * If the number is a multiple of 3, they say **Fizz**
+  * If the number is a multiple of 5, they say **Buzz**
+  * For multiple of both 3 and 5 they say **FizzBuzz**
+  * Otherwise they say the number
+* Implement a compute function to translate a number to its FizzBuzz counterpart
+* Test your compute function using table testing technique
+* Ensure you've achieved complete code coverage!
+
+
+## Installation
 
 ```shell
-	go run main.go               # => Hello, my name is No one. I am 42 years old!"
-	go run main.go -u Fernand    # => Hello, my name is Fernand. I am 42 years old!
-	go run main.go -a 21         # => Hello, my name is Nobody. I am 21 years old!
+# Install Assertion and Reflex packages
+go get -f -u github.com/cespare/reflex github.com/stretchr/testify
+```
+
+
+## Up And Running
+
+### Run your tests
+
+```shell
+go test
+```
+
+### Check coverages
+
+```shell
+go test -coverprofile=cov.out && go tool cover -html=cov.out
+```
+
+### Watch your tests
+
+```shell
+reflex -g '*.go' go test
 ```
 
 ---
