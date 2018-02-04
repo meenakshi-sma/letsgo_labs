@@ -1,17 +1,31 @@
-// FizzBuzz game calculator
+// © 2018 Imhotep Software LLC. All rights reserved.
 
+// Package fizzbuzz implements a FizzBuzz game.
+//
+// Description
+//
+// In a FizzBuzz Game, children count up from 1.
+//
+// 	If the number is a multiple of 3, they say **Fizz**
+//
+// 	If the number is a multiple of 5, they say **Buzz**
+//
+// 	For multiple of both 3 and 5 they say **FizzBuzz**
+//
+// 	Otherwise they say the number
 package fizzbuzz
 
 import (
 	"fmt"
 )
 
-// compute returns a FizzBuzz number based on given inputs.
-// Returns `FizzBuzz` if number div by 3 and 5.
-// Fizz if div by 3.
-// Buzz if div by 5
-// Otherwise the given number
-func compute(n int) (s string) {
+// Compute a FizzBuzz number based on given input.
+//
+// 	Returns `FizzBuzz if number div by 3 and 5.
+// 	`Fizz if div by 3.
+// 	`Buzz if div by 5.
+// 	`number otherwise.
+func Compute(n int) (s string) {
 	switch {
 	case n%3 == 0 && n%5 == 0:
 		s = "FizzBuzz"
