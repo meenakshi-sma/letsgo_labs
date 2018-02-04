@@ -20,12 +20,12 @@
 go get -f -u github.com/cespare/reflex github.com/stretchr/testify
 ```
 
-## Testing
+## Up And Running...
 
 1. Run the tests
 
 ```shell
-go test
+make test
 ```
 
 1. Run test coverage
@@ -39,7 +39,6 @@ make cov
 ```shell
 make watch
 ```
-
 
 ---
 <img src="assets/imhotep_logo.png" width="32" height="auto"/> © 2018 Imhotep Software LLC.
