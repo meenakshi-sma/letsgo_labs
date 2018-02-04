@@ -1,4 +1,5 @@
 // FizzBuzz game calculator
+
 package fizzbuzz
 
 import (
