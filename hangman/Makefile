@@ -12,3 +12,6 @@ cov:   ## Generate HTML coverage report
 
 bench: ## Run your benchmarks
 	@go test --run xxx --bench Greet --benchmem --benchtime=3s
+
+doc:  ## Run local docs
+	@godoc --http :3000 --index

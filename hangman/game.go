@@ -1,6 +1,10 @@
-// Package Hangman
-// Plays a hangman game using a give word
+// © 2018 Imhotep Software LLC. All rights reserved.
 
+// Package hangman
+// Implements a hangman game. The game tracks a word to be guessed
+// and a tally to track game state and progress.
+//
+// Playing
 package hangman
 
 // Game tracks hangman game state and tally
@@ -14,7 +18,7 @@ func NewGame(w string) *Game {
 	return &Game{word: w, Tally: NewTally(7, len(w))}
 }
 
-// Guess a new letter and computes a new game tally
+// Guess a letter and computes a corresponding tally
 func (g *Game) Guess(guess rune) {
 	g.Tally.Update(g.word, guess)
 }

@@ -1,5 +1,4 @@
-// Package hangman
-// Tally tracks the progression of guesses in the hangman game
+// © 2018 Imhotep Software LLC. All rights reserved.
 
 package hangman
 
@@ -29,10 +28,20 @@ type (
 
 // NewTally creates a new tally
 func NewTally(turns int, wordLen int) *Tally {
-	return &Tally{
+	letters := make([]rune, wordLen)
+	initLetters(letters)
+	t := &Tally{
 		TurnsLeft: turns,
-		Letters:   make([]rune, wordLen),
+		Letters:   letters,
 		Status:    Active,
+	}
+
+	return t
+}
+
+func initLetters(letters []rune) {
+	for i := range letters {
+		letters[i] = '_'
 	}
 }
 
