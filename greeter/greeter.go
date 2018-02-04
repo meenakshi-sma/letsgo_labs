@@ -1,17 +1,20 @@
-// Using Test first principles, implement a set of tests for your very own
-// greeter function that we've written in the fmt lab.
-//
-// o Use ad-hoc values for name, age, height
-// o Try out zero-values for name, age, height
-// o Make use of the assert functions from testify to validate your tests.
-// o See installation/run steps below
-// o Practice breaking one of the test on purpose and fixing it.
-// o Issue a test command to only run one of the tests from the command line!
-// o Make sure you achieve 100% test coverage using the standard coverage tool.
+// Greeter computes a greeting message
 
 package greeter
 
+import (
+	"fmt"
+	"strconv"
+)
+
+const greeting = "Hello, %s! You are %d old today..."
+
 // greeter return a greeting based on name, age and height
-func greeter(n string, a int, h float32) string {
-	// YOUR_CODE...
+func greeter(n string, a int) string {
+	return fmt.Sprintf(greeting, n, a)
+}
+
+// greeter1 return a greeting based on name, age and height
+func greeter1(n string, a int) string {
+	return "Hello, " + n + "! You are " + strconv.Itoa(a) + " old today..."
 }

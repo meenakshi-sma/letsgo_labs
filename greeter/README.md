@@ -2,16 +2,24 @@
 
 ## Mission
 
-> Using Test first principles, implement a set of tests for your very own greeter function
-> that we've written in the fmt lab.
+> Congratulations! You've just got a new gig working at Google!!
+> Your PM says we have to speed up the initial greeting page load that's
+> being hit by millions of users. The greeting page greets the users with
+> a user name and age. Using benchmarking tests implement a second version
+> of the greeter and compare with your initial version. You will need to
+> ensure that your new function works just like the old one using your
+> tests and then run your benchmarks.
 
-* Use ad-hoc values for name, age, height
-* Try out zero-values for name, age, height
-* Make use of the assert functions from testify to validate your tests.
-* See installation/run steps below
-* Practice breaking one of the test on purpose and fixing it.
-* Issue a test command to only run one of the tests from the command line!
-* Make sure you achieve 100% test coverage using the standard coverage tool.
+* Use the fmt.Sprintf formatter for your initial implementation
+* Tip! Another way to concatenate strings is by using the + operator.
+    ```go
+    s = "Fred" + " is cool!"       // => Fred is cool!
+    s += " And to boot handsome!!" // => Fred is cool! And to boot handsome!!
+    ```
+* What are your findings?
+* NOTE! To get more accurate measurements testing.B.ResetTimer() allows to reset your
+  benchmark timer so that setup does not impact measurements. Use it!
+* NOTE! You will need to leverage a function Itoa to convert an integer to a string.
 
 ## Installation
 
@@ -25,13 +33,13 @@ go get -f -u github.com/cespare/reflex github.com/stretchr/testify
 1. Run the tests
 
 ```shell
-make test
+go test
 ```
 
-1. Run test coverage
+1. Run Benchmarks
 
 ```shell
-make cov
+go test --run xxx --bench Greet --benchmem --benchtime=3
 ```
 
 1. Run auto tests
