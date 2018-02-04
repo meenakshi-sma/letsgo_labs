@@ -1,4 +1,4 @@
-# CLI with Flags Lab
+# LetsGo! CLI with Flags Lab
 
 ## Mission
 
