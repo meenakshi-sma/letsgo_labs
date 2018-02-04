@@ -1,18 +1,16 @@
 // © 2018 Imhotep Software LLC. All rights reserved.
 
-/*
-	Package hangman implements a hangman game. The game tracks a word to be
-	guessed and a tally to track game state and progress.
-
-	Playing the Game
-
-		You will need to seed the game with a given word. Once seeded,
-		you can start emitting guesses. The game hangman.Tally will records your
-		actions and will alert your for win, loose or already guessed letters.
-
-		The tally also tracks the guesses letters and display output as a collection
-		of letters and '_'.
-*/
+// Package hangman implements a hangman game. The game tracks a word to be
+// guessed and a tally to track game state and progress.
+//
+// Playing the Game
+//
+// You will need to seed the game with a given word. Once seeded,
+// you can start emitting guesses. A game tally will records your
+// actions and will alert your for win, loose or already guessed letters.
+//
+// The tally also tracks the guesses letters and display output as a collection
+// of letters and '_'.
 package hangman
 
 // Game tracks hangman game state and tally

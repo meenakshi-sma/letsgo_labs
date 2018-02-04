@@ -59,6 +59,7 @@ func TestExtraGuesses(t *testing.T) {
 	assert.Equal(t, hangman.Lost, g.Tally.Status)
 }
 
+// Example to show how to create a new game
 func ExampleNewGame() {
 	g := hangman.NewGame("test")
 	fmt.Println(string(g.Tally.Letters), g.Tally.TurnsLeft, g.Tally.Status)
@@ -66,6 +67,7 @@ func ExampleNewGame() {
 	// ____ 7 0
 }
 
+// Example showing what happens when emitting a good guess
 func ExampleGame_Guess_good() {
 	g := hangman.NewGame("test")
 	g.Guess('t')
@@ -74,6 +76,7 @@ func ExampleGame_Guess_good() {
 	// t__t 7 0
 }
 
+// Example for emitting a bad guess
 func ExampleGame_Guess_bad() {
 	g := hangman.NewGame("test")
 	g.Guess('z')
@@ -82,6 +85,7 @@ func ExampleGame_Guess_bad() {
 	// ____ 6 0
 }
 
+// Example showing the final outcome for a guessed word
 func ExampleGame_Guess_win() {
 	g := hangman.NewGame("test")
 	for _, l := range []rune("tes") {
@@ -92,6 +96,7 @@ func ExampleGame_Guess_win() {
 	// test 7 1
 }
 
+// Example showing what happens when you've expired your guesses
 func ExampleGame_Guess_loose() {
 	g := hangman.NewGame("test")
 	for _, l := range []rune("abcdfgh") {
@@ -102,6 +107,7 @@ func ExampleGame_Guess_loose() {
 	// ____ 0 2
 }
 
+// Example showing using emitting an already guessed letter
 func ExampleGame_Guess_alreadyGuessed() {
 	g := hangman.NewGame("test")
 	for _, l := range []rune("tee") {
