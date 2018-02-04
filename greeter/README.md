@@ -16,9 +16,8 @@
 ## Installation
 
 ```shell
-# Assertion package
-go get -f -u github.com/cespare/reflex
-go get -f github.com/stretchr/testify
+# Install Assertion and Reflex packages
+go get -f -u github.com/cespare/reflex github.com/stretchr/testify
 ```
 
 ## Testing
