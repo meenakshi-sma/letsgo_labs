@@ -11,12 +11,7 @@
 
 package greeter
 
-import "fmt"
-
-// greets a fellow human
-const greet = "Hello, my name is %s. I am %b years old and '%05.2f' tall!"
-
 // greeter return a greeting based on name, age and height
 func greeter(n string, a int, h float32) string {
-	return fmt.Sprintf(greet, n, a, h)
+	// YOUR_CODE...
 }
