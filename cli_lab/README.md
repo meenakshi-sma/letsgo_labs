@@ -12,7 +12,7 @@ and default age is of course 42!
 ```shell
 	go run main.go               # => Hello, my name is No one. I am 42 years old!"
 	go run main.go -u Fernand    # => Hello, my name is Fernand. I am 42 years old!
-	go run main.go -a 21         # => Hello, my name is Nobody. I am 21 years old!
+	go run main.go -a 21         # => Hello, my name is No One. I am 21 years old!
 ```
 
 ---
