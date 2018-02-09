@@ -2,17 +2,11 @@
 
 // Package fizzbuzz implements a FizzBuzz game.
 //
-// Description
-//
 // In a FizzBuzz Game, children count up from 1.
-//
-// 	If the number is a multiple of 3, they say **Fizz**
-//
-// 	If the number is a multiple of 5, they say **Buzz**
-//
-// 	For multiple of both 3 and 5 they say **FizzBuzz**
-//
-// 	Otherwise they say the number
+// 	o If the number is a multiple of 3, they say **Fizz**
+// 	o If the number is a multiple of 5, they say **Buzz**
+// 	o For multiple of both 3 and 5 they say **FizzBuzz**
+// 	o Otherwise they say the number
 package fizzbuzz
 
 import (

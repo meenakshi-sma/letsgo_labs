@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/imhotep/letsgo_labs/fizzbuzz"
+	"github.com/imhotepio/letsgo_labs/fizzbuzz"
 	"github.com/stretchr/testify/assert"
 )
 
