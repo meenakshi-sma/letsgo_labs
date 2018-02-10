@@ -13,9 +13,9 @@
 
 * Create a dictionary dir in your go workspace
   * $GOPATH/src/github.com/YOUR_GITHUB_HANDLE
-* Define a load function to load a list of words into your dictionary
+* Define a load function to hydrate your dictionary with a list of words
 * Define a pick function to randomly pick a new word
-* Test and Document your package
+* Write tests and completely document your package
 * Ensure you have adequate coverage and you're not exposing too much!
 * Next implement a CLI to load words from your dictionary
 * The CLI should take in command line args and specify 2 options:
