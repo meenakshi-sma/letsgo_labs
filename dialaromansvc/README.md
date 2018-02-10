@@ -6,15 +6,15 @@
 
 * The service output should be a JSON document with the following fields:
   * status : http response code
-  * number: the arabic number
+  * result: the roman literal
   * url: the url to run the inverse converter
 * Use port 9000 your service
 * Use the following roman calculator package:
   [Roman](https://github.com/imhotepio/letsgo_labs/tree/master/roman)
 * Make sure all your tests pass!
-* Ensure all your public API are well documented
+* Ensure you send an error code back if the arabic number is > 3999
 * Make sure code coverage is good > 80%!
-* BONUS: Implement the reverse calculator ie from roman -> arabic
+* BONUS! Implement the reverse calculator ie from roman -> arabic
 
 
 ## Usage
