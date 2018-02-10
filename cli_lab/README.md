@@ -2,10 +2,14 @@
 
 ## Mission
 
-Leveraging the code from the greeter lab, create a program that
-takes in parameters for the user name and age and display the
-message. If no flags are specified, the default user is "No one"
-and default age is of course 42!
+> Leveraging the code from the greeter lab, create a program that takes in parameters
+> for the user name and age and display the message.
+
+* Create a new directory in your Go Worskspace called *letsgo_greeter*
+* Create a file *main.go* in that directory ie $GOPATH/src/github.com/YOUR_GITHUB_HANDLE/letsgo_greeter
+* Default user: *No one*
+* Default age: *42* of course!
+* [Extra Bonus] Print out the program help. Can you explain what's going on with Usage of? and how to fix it?
 
 ## Usage
 
