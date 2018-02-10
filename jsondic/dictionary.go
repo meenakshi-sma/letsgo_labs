@@ -1,3 +1,6 @@
+// © 2018 Imhotep Software LLC. All rights reserved.
+
+// Package jsondic provides for JSON encoding/decoding of a dictionary entry.
 package jsondic
 
 import (
