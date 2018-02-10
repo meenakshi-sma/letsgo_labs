@@ -41,7 +41,7 @@ Date: Sat, 10 Feb 2018 19:11:38 GMT
 }
 ```
 
-## OSX Brew Extra Install (Optional!!)
+## OSX Brew Installs (Totally Optional!!)
 
 ```shell
 # Install watch via homebrew
