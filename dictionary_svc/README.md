@@ -9,23 +9,61 @@
 ---
 ## <img src="../assets/lab.png" width="auto" height="32"/> Mission
 
-> Package deal! Implement a word dictionary package
+> And that's a Wrap!! Decorate your word dictionary as a Web Service...
 
-* Create a dictionary dir in your go workspace
-  * $GOPATH/src/github.com/YOUR_GITHUB_HANDLE
-* Define a load function to load words from the file system.
-* Assume you can load words from different directories and files
-* Define a pick function to randomly pick a new word from a list of words
-* Write tests and completely document your package
-* Ensure you have adequate coverage and you're not exposing too much!
-* Next implement a CLI to load words from your dictionary
-* The CLI should take in command line args and specify 2 options:
-    * A directory where to load the dictionaries from
-    * The name of the dictionary to load
-    * Ensures it display a new random word on each runs!
-* Congratulation!! You've just built a brand new go package!
-* BONUS! Change your CLI to reference your classmate repo and run the CLI using
-  their implementation
+* Make sure to leverage your dictionary/jsondic packages for this lab!
+* Ensure your web server is listening on port 4500
+* Create a HTTP endpoint **/new_word** to serve out new words from a given dictionary
+  * The request should take a query parameter ie dic=words or dic=artists
+  * You should issue a JSON response!
+  * Add a logger to log out your endpoint calls
+* In your implementation load the dictionary from the requested dictionary file
+* From your *dictionary* package api, load and pick out a random word
+* From your *jsondic* package, use the encoder to encode the JSON response
+* Make sure the proper JSON headers are set
+* Write the necessary tests to shake out your endpoints!
+* Run your application and test it using the dictionaries provided in the assets directory
+* BONUS! Hit a classmate dictionary service using watch or a shell loop to make sure
+  random words are indeed showing up for each requests ;)
+
+## Expected Output
+
+```text
+HTTP/1.1 200 OK
+Content-Length: 68
+Content-Type: application/json; charset=utf-8
+Date: Sat, 10 Feb 2018 19:11:38 GMT
+
+{
+    "dictionary": "trump",
+    "location": "assets",
+    "random_word": "fakenews"
+}
+```
+
+## OSX Brew Extra Install (Optional!!)
+
+```shell
+# Install watch via homebrew
+brew install watch
+# Install httpie
+brew install httpie
+```
+
+## Commands
+
+```shell
+# Start your web server
+go run main.go
+# Hit the new_word url classic
+curl http://localhost:4500/new_word?dic=words
+# Or... Hit the trump dictionary
+curl http://localhost:4500/new_word?dic=trump
+# Optionally use watch!
+watch curl http://localhost:4500/new_word?dic=words
+# Or httpie...
+http :4500/new_word dic==trump
+```
 
 ---
 <img src="../assets/imhotep_logo.png" width="32" height="auto"/> © 2018 Imhotep Software LLC.
