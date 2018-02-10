@@ -48,13 +48,11 @@ func get(host string, port int, path string, args map[string]string) (jsondic.En
 	if err != nil {
 		return entry, err
 	}
-
 	if resp.StatusCode != 200 {
 		return entry, fmt.Errorf("Response not ok %d", resp.StatusCode)
 	}
 
 	defer resp.Body.Close()
-
 	err = json.NewDecoder(resp.Body).Decode(&entry)
 	if err != nil {
 		return entry, err
