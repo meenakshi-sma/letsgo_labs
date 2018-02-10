@@ -6,8 +6,10 @@
 
 # LetsGo! Labs
 
-This repository contains lab solutions for the LetsGo! class materials.
+[![Go Report Card](https://goreportcard.com/badge/github.com/imhotepio/letsgo_labs)](https://goreportcard.com/report/github.com/imhotepio/letsgo_labs)
 
+
+This repository contains lab solutions for the LetsGo! class materials.
 
 
 ---
