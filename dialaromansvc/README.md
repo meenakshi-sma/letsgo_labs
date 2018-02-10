@@ -1,13 +1,20 @@
-# DialARoman Service
+# LetsGo! DialARoman Service Lab
 
-## Lab
+## Mission
 
-> Write a Web Service to convert roman to arabic and vice versa.
-> The service output should be a JSON document with the following fields:
-> o status : http response code
-> o number: the arabic or roman number
-> o url: the url to run the inverse converter
-ie if roman was requested formulate the arabic conversion url or vice versa.
+> Going Full Monty! Write a web Service to convert an arabic number to a roman literal.
+
+* The service output should be a JSON document with the following fields:
+  * status : http response code
+  * number: the arabic number
+  * url: the url to run the inverse converter
+* Use port 9000 your service
+* Use the following roman calculator package:
+  [Roman](https://github.com/imhotepio/letsgo_labs/tree/master/roman)
+* Make sure all your tests pass!
+* Ensure all your public API are well documented
+* Make sure code coverage is good > 80%!
+* BONUS: Implement the reverse calculator ie from roman -> arabic
 
 
 ## Usage
@@ -17,13 +24,14 @@ ie if roman was requested formulate the arabic conversion url or vice versa.
 1. To convert a number from arabic to a roman literal
 
     ```shell
-    http :9000/roman n==10
+
+    curl -XGET http://localhost:3000/roman?n=10
     ```
 
 1. To convert a roman literal to arabic
 
     ```shell
-    http :9000/arabic r=="XXV"
+    curl -XGET http://localhost:3000/arabic?g=X
     ```
 
 ---
