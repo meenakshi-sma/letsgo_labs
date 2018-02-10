@@ -20,7 +20,7 @@ g, err := roman.ToRoman(10) // => X
 ### Converts Roman To Arabic
 
 ```go
-a, err = roman.ToArabic("X") // => 10
+a, err := roman.ToArabic("X") // => 10
 ```
 
 ---
