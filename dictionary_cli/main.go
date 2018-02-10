@@ -16,7 +16,6 @@ func main() {
 		host = flag.String("h", "localhost", "Dictionary service host. Default localhost")
 		port = flag.Int("p", 4500, "Dictionary service port. Default 4500")
 	)
-
 	flag.Parse()
 
 	e, err := dialADic(*dic, *host, *port)
@@ -26,7 +25,6 @@ func main() {
 	fmt.Printf("[DialADic] The word of the day is `%s\n", e.Word)
 }
 
-// ToRoman converts an arabic number to a roman glyph
 func dialADic(dic, host string, port int) (jsondic.Entry, error) {
 	return get(host, port, "new_word", map[string]string{"dic": dic})
 }
