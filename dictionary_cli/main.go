@@ -32,7 +32,7 @@ func dialADic(dic, host string, port int) (jsondic.Entry, error) {
 func get(host string, port int, path string, args map[string]string) (jsondic.Entry, error) {
 	var entry jsondic.Entry
 
-	u, err := url.Parse(fmt.Sprintf("http://%s:%d/", host, port))
+	u, err := url.Parse(fmt.Sprintf("http://%s:%d", host, port))
 	if err != nil {
 		return entry, err
 	}
