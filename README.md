@@ -1,4 +1,4 @@
-<img src="../assets/gophernand.png" align="right" width="100" height="auto"/>
+<img src="assets/gophernand.png" align="right" width="100" height="auto"/>
 
 <br/>
 <br/>
