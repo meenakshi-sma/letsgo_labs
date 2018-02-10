@@ -9,14 +9,14 @@
 ---
 ## <img src="../assets/lab.png" width="auto" height="32"/> Mission
 
-> Implement a word dictionary package
+> Implement a Dictionary package
 
 * Create a dictionary dir in your go workspace
   * $GOPATH/src/github.com/YOUR_GITHUB_HANDLE
 * Define a load function to load a list of words into your dictionary
 * Define a pick function to randomly pick a new word
 * Test and Document your package
-* Ensure you have adequate coverage
+* Ensure you have adequate coverage and you're not exposing too much!
 * Next implement a CLI to load words from your dictionary
 * The CLI should take in command line args and specify 2 options:
  1. A directory where to load the dictionaries from
