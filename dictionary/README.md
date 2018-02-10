@@ -19,8 +19,8 @@
 * Ensure you have adequate coverage and you're not exposing too much!
 * Next implement a CLI to load words from your dictionary
 * The CLI should take in command line args and specify 2 options:
- 1. A directory where to load the dictionaries from
- 2. The name of the dictionary to load
+    * A directory where to load the dictionaries from
+    * The name of the dictionary to load
 * Congratulation!! You've just built a brand new go package!
 * BONUS! Chenge your CLI to reference your classmate repo and run the CLI using
   their implementation
