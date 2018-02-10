@@ -1,3 +1,9 @@
+<img src="assets/gophernand.png" align="right" width="100" height="auto"/>
+
+<br/>
+<br/>
+<br/>
+
 # LetsGo! Labs
 
 This repository contains lab solutions for the LetsGo! class materials.
