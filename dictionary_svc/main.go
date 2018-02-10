@@ -12,11 +12,15 @@ import (
 const httpPort = ":4500"
 
 func main() {
-	http.HandleFunc("/new_word", newWordHandler)
-	http.HandleFunc("/", noMatchHandler)
+	setUpRoutes()
 
 	log.Printf("Private Dic is listening [%s]", httpPort)
 	http.ListenAndServe(httpPort, nil)
+}
+
+func setUpRoutes() {
+	http.HandleFunc("/new_word", newWordHandler)
+	http.HandleFunc("/", noMatchHandler)
 }
 
 func newWordHandler(w http.ResponseWriter, r *http.Request) {

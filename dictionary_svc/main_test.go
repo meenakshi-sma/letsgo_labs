@@ -11,17 +11,40 @@ import (
 )
 
 func TestNewWordHandler(t *testing.T) {
-	req, _ := http.NewRequest("GET", "http://example.com/new_word?dic=artists", nil)
+	var (
+		rr   = httptest.NewRecorder()
+		r, _ = http.NewRequest("GET", "http://example.com/new_word?dic=artists", nil)
+	)
 
-	w := httptest.NewRecorder()
-	newWordHandler(w, req)
-	assert.Equal(t, http.StatusOK, w.Code)
+	setUpRoutes()
+	newWordHandler(rr, r)
+	assert.Equal(t, http.StatusOK, rr.Code)
 
 	e := jsondic.Entry{}
-	err := json.NewDecoder(w.Body).Decode(&e)
+	err := json.NewDecoder(rr.Body).Decode(&e)
 	assert.Nil(t, err)
 
 	assert.Equal(t, "artists", e.Dictionary)
 	assert.Equal(t, "assets", e.Location)
 	assert.NotEqual(t, "", e.Word)
+}
+
+func TestNoMatchHandler(t *testing.T) {
+	var (
+		rr   = httptest.NewRecorder()
+		r, _ = http.NewRequest("GET", "http://example.com/", nil)
+	)
+
+	noMatchHandler(rr, r)
+	assert.Equal(t, http.StatusBadRequest, rr.Code)
+}
+
+func TestNewWordHandlerNoDic(t *testing.T) {
+	var (
+		w      = httptest.NewRecorder()
+		req, _ = http.NewRequest("GET", "http://example.com/new_word?dic=bozo", nil)
+	)
+
+	newWordHandler(w, req)
+	assert.Equal(t, http.StatusExpectationFailed, w.Code)
 }
