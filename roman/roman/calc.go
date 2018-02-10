@@ -29,13 +29,13 @@ func ToRoman(n int) (r string, e error) {
 func ToArabic(s string) (int, error) {
 	res, chars := 0, []rune(s)
 	for i, r := range s {
-		i1, err := indexOfSymbol(r)
+		i1, err := findGlyph(r)
 		if err != nil {
 			return 0, err
 		}
 
 		if i+1 < len(s) {
-			i2, err := indexOfSymbol(chars[i+1])
+			i2, err := findGlyph(chars[i+1])
 			if err != nil {
 				return 0, err
 			}
@@ -49,7 +49,7 @@ func ToArabic(s string) (int, error) {
 	return res, nil
 }
 
-func indexOfSymbol(s rune) (int, error) {
+func findGlyph(s rune) (int, error) {
 	for i := range glyphs {
 		if glyphs[i] == string(s) {
 			return i, nil
