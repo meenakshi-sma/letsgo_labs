@@ -7,7 +7,7 @@
 <br/>
 
 ---
-### <img src="../assets/lab.png" width="auto" height="32"/> Mission
+## <img src="../assets/lab.png" width="auto" height="32"/> Mission
 
 > Implement a word dictionary package
 
