@@ -12,7 +12,8 @@
 * Use the following roman calculator package:
   [Roman](https://github.com/imhotepio/letsgo_labs/tree/master/roman)
 * Make sure all your tests pass!
-* Ensure you send an error code back if the arabic number is > 3999
+* Ensure you send http code (417 - Expectation failed) back if the arabic number is > 3999
+
 * Make sure code coverage is good > 80%!
 * BONUS! Implement the reverse calculator ie from roman -> arabic
 
