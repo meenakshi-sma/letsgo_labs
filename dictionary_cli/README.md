@@ -13,7 +13,6 @@
 > Implement a Dictionary CLI to call your new Dictionary HTTP service
 
 * Implement a CLI that takes the following options:
-  * -dir: directory where the dictionaries reside
   * -dic: dictionary name
   * -host: a host location where the dictionary is running
   * -port: port where your service is running
