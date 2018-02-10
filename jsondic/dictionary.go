@@ -15,20 +15,17 @@ type Entry struct {
 // Encode an entry into JSON
 func Encode(e Entry) (string, error) {
 	var buff bytes.Buffer
-
 	err := json.NewEncoder(&buff).Encode(e)
 	if err != nil {
 		return "", err
 	}
+
 	return buff.String(), nil
 }
 
 // Decode hydrates an entry from JSON
-func Decode(raw string) (Entry, error) {
-	var e Entry
-	err := json.NewDecoder(bytes.NewReader([]byte(raw))).Decode(&e)
-	if err != nil {
-		return e, err
-	}
-	return e, nil
+func Decode(raw string) (e Entry, err error) {
+	err = json.NewDecoder(bytes.NewReader([]byte(raw))).Decode(&e)
+
+	return
 }

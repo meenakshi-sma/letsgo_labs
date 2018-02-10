@@ -29,3 +29,10 @@ func TestDecoding(t *testing.T) {
 	assert.Equal(t, "/tmp/assets", e.Location)
 	assert.Equal(t, "bumblebeetuna", e.Word)
 }
+
+func TestDecodingFail(t *testing.T) {
+	raw := `fred`
+
+	_, err := jsondic.Decode(raw)
+	assert.NotNil(t, err)
+}
