@@ -14,7 +14,7 @@ go get github.com/imhotepio/letsgo_labs/roman
 ### Converts Arabic To Roman
 
 ```go
-g := roman.ToRoman(10) // => X
+g, err := roman.ToRoman(10) // => X
 ```
 
 ### Converts Roman To Arabic
