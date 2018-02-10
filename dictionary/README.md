@@ -1,10 +1,9 @@
-# LetsGo! Dictionary Lab
-
 <img src="../assets/gophernand.png" align="right" width="100" height="auto"/>
 
 <br/>
 <br/>
 <br/>
+# LetsGo! Dictionary Lab
 
 ---
 ## <img src="../assets/lab.png" width="auto" height="32"/> Mission
