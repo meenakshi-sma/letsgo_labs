@@ -14,13 +14,13 @@ go get github.com/imhotepio/letsgo_labs/roman
 ### Converts Arabic To Roman
 
 ```go
-g := ArabicToRoman(10) // => X
+g := roman.ToRoman(10) // => X
 ```
 
 ### Converts Roman To Arabic
 
 ```go
-a, err = RomanToArabic("X") // => 10
+a, err = roman.ToArabic("X") // => 10
 ```
 
 ---
