@@ -21,7 +21,6 @@ func TestGreeter1(t *testing.T) {
 
 func BenchmarkGreeter(b *testing.B) {
 	n, a := "Fernand", 30
-
 	b.ResetTimer()
 
 	for i := 0; i < b.N; i++ {
@@ -31,7 +30,6 @@ func BenchmarkGreeter(b *testing.B) {
 
 func BenchmarkGreeter1(b *testing.B) {
 	n, a := "Fernand", 30
-
 	b.ResetTimer()
 
 	for i := 0; i < b.N; i++ {
