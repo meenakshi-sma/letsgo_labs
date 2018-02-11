@@ -48,6 +48,13 @@ go test -coverprofile=cov.out && go tool cover -html=cov.out
 reflex -g '*.go' go test
 ```
 
+### Generate local docs
+
+```shell
+# Checkout your docs make take a while to reindex. If so list out your package!
+godoc -http :3000 --index
+```
+
 ---
 <img src="../assets/imhotep_logo.png" width="32" height="auto"/> © 2018 Imhotep Software LLC.
 All materials licensed under [Apache v2.0](http://www.apache.org/licenses/LICENSE-2.0)
