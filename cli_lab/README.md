@@ -1,6 +1,14 @@
+<img src="../assets/gophernand.png" align="right" width="100" height="auto"/>
+
+<br/>
+<br/>
+<br/>
+
 # LetsGo! CLI with Flags Lab
 
-## Mission
+---
+## <img src="../assets/lab.png" width="auto" height="32"/> Mission
+
 
 > Leveraging the code from the greeter lab, create a program that takes in parameters
 > for the user name and age and display the message.
