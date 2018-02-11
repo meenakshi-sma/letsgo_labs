@@ -1,4 +1,10 @@
-# LetsGo! CLI with Flags Lab
+<img src="../assets/gophernand.png" align="right" width="100" height="auto"/>
+
+<br/>
+<br/>
+<br/>
+
+# LetsGo! CLI Flags Lab
 
 ## Mission
 
