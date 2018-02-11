@@ -4,22 +4,14 @@
 
 > Congratulations! You've just got a new gig working at Google!!
 > Your PM says we have to speed up the initial greeting page load that's
-> being hit by millions of users. The greeting page greets the users with
-> a user name and age. Using benchmarking tests implement a second version
-> of the greeter and compare with your initial version. You will need to
-> ensure that your new function works just like the old one using your
-> tests and then run your benchmarks.
+> being hit by billions of users! The page greets the users with
+> a user name and age.
 
-* Use the fmt.Sprintf formatter for your initial implementation
-* Tip! Another way to concatenate strings is by using the + operator.
-    ```go
-    s = "Fred" + " is cool!"       // => Fred is cool!
-    s += " And to boot handsome!!" // => Fred is cool! And to boot handsome!!
-    ```
+* Using Benchmark tests implement a second version of the greeter and compare
+  with your initial version.
+* Make sure your new implementation works the same as the old one
+* TIP! Another way to concatenate strings is by using the + operator.
 * What are your findings?
-* NOTE! To get more accurate measurements testing.B.ResetTimer() allows to reset your
-  benchmark timer so that setup does not impact measurements. Use it!
-* NOTE! You will need to leverage a function Itoa to convert an integer to a string.
 
 ## Installation
 
