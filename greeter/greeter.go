@@ -15,3 +15,8 @@ package greeter
 func greeter(n string, a int, h float32) string {
 	// YOUR_CODE...
 }
+
+// greeter return a greeting based on name, age and height
+func greeter1(n string, a int, h float32) string {
+	// YOUR_CODE...
+}

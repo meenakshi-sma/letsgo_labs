@@ -8,6 +8,6 @@ func TestGreeter(t *testing.T) {
 	// YOUR_CODE...
 }
 
-func TestGreeterZero(t *testing.T) {
+func TestGreeter1(t *testing.T) {
 	// YOUR_CODE...
 }
