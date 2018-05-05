@@ -1,23 +1,21 @@
-package fizzbuzz_test
+package fizzbuzz
 
 import (
 	"testing"
 
-	"github.com/imhotepio/letsgo_labs/fizzbuzz"
 	"github.com/stretchr/testify/assert"
 )
 
 func TestCompute(t *testing.T) {
 	uc := map[int]string{
-		0:  "FizzBuzz",
 		1:  "1",
-		3:  "Fizz",
+		3:  fizz,
 		4:  "4",
-		5:  "Buzz",
-		15: "FizzBuzz",
+		5:  buzz,
+		15: fizzbuzz,
 	}
 
 	for k, v := range uc {
-		assert.Equal(t, v, fizzbuzz.Compute(k))
+		assert.Equal(t, v, compute(k))
 	}
 }

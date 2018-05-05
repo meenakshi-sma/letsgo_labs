@@ -9,8 +9,12 @@
 // 	o Otherwise they say the number
 package fizzbuzz
 
-import (
-	"fmt"
+import "strconv"
+
+const (
+	fizz     = "Fizz"
+	buzz     = "Buzz"
+	fizzbuzz = "FizzBuzz"
 )
 
 // Compute a FizzBuzz number based on given input.
@@ -19,16 +23,16 @@ import (
 // 	`Fizz if div by 3.
 // 	`Buzz if div by 5.
 // 	`number otherwise.
-func Compute(n int) (s string) {
+func compute(n int) (s string) {
 	switch {
 	case n%3 == 0 && n%5 == 0:
-		s = "FizzBuzz"
+		s = fizzbuzz
 	case n%3 == 0:
-		s = "Fizz"
+		s = fizz
 	case n%5 == 0:
-		s = "Buzz"
+		s = buzz
 	default:
-		s = fmt.Sprintf("%d", n)
+		s = strconv.Itoa(n)
 	}
 	return
 }
