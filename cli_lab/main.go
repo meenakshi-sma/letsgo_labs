@@ -5,17 +5,14 @@ import (
 	"fmt"
 )
 
+func greet(name string, age int) string {
+	return fmt.Sprintf("Hello, my name is %s and I am %d years old!", name, age)
+}
+
 func main() {
-	var (
-		name string
-		age  int
-	)
-
-	flag.StringVar(&name, "u", "No one", "specifies a user name. Default: No one")
-	flag.IntVar(&age, "a", 42, "specifies user age. Default: 42")
-
-	// Don't Forget!
+	u := flag.String("u", "No One", "Specify a user name")
+	a := flag.Int("a", 42, "Specify a user age")
 	flag.Parse()
 
-	fmt.Printf("Hello my name is %s and I am %d years old!\n", name, age)
+	fmt.Println(greet(*u, *a))
 }
