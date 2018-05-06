@@ -4,10 +4,10 @@ import (
 	"testing"
 )
 
-func TestGreeter(t *testing.T) {
+func TestGreeter1(t *testing.T) {
 	// YOUR_CODE...
 }
 
-func TestGreeter1(t *testing.T) {
+func TestGreeter2(t *testing.T) {
 	// YOUR_CODE...
 }
