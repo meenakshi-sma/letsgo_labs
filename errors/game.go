@@ -12,8 +12,10 @@ const (
 	fizzBuzz = fizz + buzz
 )
 
-var errUnderRange = errors.New("Number is under range (<=0)")
-var errOverRange = errors.New("Number is over range (> 20)")
+var (
+	errUnderRange = errors.New("Number is under range (<=0)")
+	errOverRange  = errors.New("Number is over range (> 20)")
+)
 
 func main() {
 	for i := 0; i <= 21; i++ {
