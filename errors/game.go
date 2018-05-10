@@ -1,7 +1,3 @@
-// Enhance The FizzBuzz game!
-// o Write a program that iterates from 0 to 21 included
-// o The program should issue an error if the number is <= 0 or > 20
-// o Otherwise the program should print the fizzbuzz representation of that number.
 package main
 
 import (
