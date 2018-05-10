@@ -1,0 +1,56 @@
+// Enhance The FizzBuzz game!
+// o Write a program that iterates from 0 to 21 included
+// o The program should issue an error if the number is <= 0 or > 20
+// o Otherwise the program should print the fizzbuzz representation of that number.
+package main
+
+import (
+	"fmt"
+
+	"github.com/pkg/errors"
+)
+
+const (
+	fizz     = "Fizz"
+	buzz     = "Buzz"
+	fizzBuzz = fizz + buzz
+)
+
+var errUnderRange = errors.New("Number is under range (<=0)")
+var errOverRange = errors.New("Number is over range (> 20)")
+
+func main() {
+	for i := 0; i <= 21; i++ {
+		fmt.Printf("%02d ", i)
+		if r, err := play(i); err != nil {
+			fmt.Printf("%v\n", err)
+		} else {
+			fmt.Printf("%v\n", r)
+		}
+	}
+}
+
+func play(n int) (string, error) {
+	var s string
+
+	if n <= 0 {
+		return s, errors.Wrapf(errUnderRange, "FizzBuzz with %d", n)
+	}
+
+	if n > 20 {
+		return s, errors.Wrapf(errOverRange, "FizzBuzz with %d", n)
+	}
+
+	switch {
+	case n%3 == 0 && n%5 == 0:
+		s = fizzBuzz
+	case n%3 == 0:
+		s = fizz
+	case n%5 == 0:
+		s = buzz
+	default:
+		s = fmt.Sprintf("%d", n)
+	}
+
+	return s, nil
+}
