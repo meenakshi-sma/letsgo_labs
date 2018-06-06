@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestNewGameWon(t *testing.T) {
+func TestGameWon(t *testing.T) {
 	g, err := hangman.NewGame("assets/test.1.txt")
 	assert.Nil(t, err)
 
@@ -25,13 +25,14 @@ func TestNewGameWon(t *testing.T) {
 
 	for _, u := range uu {
 		ta, err := g.Guess(u.guess)
+
 		assert.Nil(t, err)
 		assert.Equal(t, u.status, ta.Status)
 		assert.Equal(t, u.letters, string(ta.Letters))
 	}
 }
 
-func TestNewGameLoose(t *testing.T) {
+func TestGameLoose(t *testing.T) {
 	g, err := hangman.NewGame("assets/test.1.txt")
 	assert.Nil(t, err)
 
@@ -48,6 +49,29 @@ func TestNewGameLoose(t *testing.T) {
 		{'f', 2, hangman.IncorrectGuess, "----"},
 		{'g', 1, hangman.IncorrectGuess, "----"},
 		{'i', 0, hangman.Lost, "----"},
+	}
+
+	for _, u := range uu {
+		ta, err := g.Guess(u.guess)
+		assert.Nil(t, err)
+		assert.Equal(t, u.status, ta.Status)
+		assert.Equal(t, u.turns, ta.TurnsLeft)
+		assert.Equal(t, u.letters, string(ta.Letters))
+	}
+}
+
+func TestGameAlreadyGuessed(t *testing.T) {
+	g, err := hangman.NewGame("assets/test.1.txt")
+	assert.Nil(t, err)
+
+	uu := []struct {
+		guess   rune
+		turns   int
+		status  hangman.GameStatus
+		letters string
+	}{
+		{'b', 6, hangman.IncorrectGuess, "----"},
+		{'b', 6, hangman.AlreadyGuessed, "----"},
 	}
 
 	for _, u := range uu {
