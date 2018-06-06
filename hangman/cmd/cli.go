@@ -12,6 +12,8 @@ import (
 )
 
 func main() {
+	var err error
+
 	sigs := make(chan os.Signal, 1)
 	signal.Notify(sigs, syscall.SIGINT)
 
@@ -21,39 +23,39 @@ func main() {
 		os.Exit(0)
 	}()
 
-	g, err := hangman.NewGame("assets/words.txt")
-	if err != nil {
+	var g *hangman.Game
+	if g, err = hangman.NewGame("assets/words.txt"); err != nil {
 		log.Fatal(err)
 	}
 
-	for !gameOver(g) {
-		fmt.Printf("\nYour Word: %10s\n", string(g.Tally.Letters))
-		c := prompt(g)
+	t := g.CurrentTally()
+	for !gameOver(t) {
+		fmt.Printf("\nYour Word: %10s\n", string(t.Letters))
+		c := prompt(t)
 		if c != '\n' {
-			_, err := g.Guess(c)
-			if err != nil {
+			if t, err = g.Guess(c); err != nil {
 				log.Fatal(err)
 			}
 		}
 	}
 }
 
-func gameOver(g *hangman.Game) bool {
-	if g.Tally.Status == hangman.Won {
+func gameOver(t *hangman.Tally) bool {
+	if t.Status == hangman.Won {
 		fmt.Printf("\n👏  Noace!! You've just won\n\n")
 		return true
 	}
 
-	if g.Tally.Status == hangman.Lost {
-		fmt.Printf("\n😿  Meow! You've just lost. It was `%s\n\n", g.Tally.Word)
+	if t.Status == hangman.Lost {
+		fmt.Printf("\n😿  Meow! You've just lost. It was `%s\n\n", t.Word)
 		return true
 	}
 	return false
 }
 
-func prompt(g *hangman.Game) rune {
+func prompt(t *hangman.Tally) rune {
 	reader := bufio.NewReader(os.Stdin)
-	fmt.Printf("\n%10s [%d/%d]? ", "Your Guess", g.Tally.TurnsLeft, hangman.MaxGuesses)
+	fmt.Printf("\n%10s [%d/%d]? ", "Your Guess", t.TurnsLeft, hangman.MaxGuesses)
 	char, _, err := reader.ReadRune()
 	if err != nil {
 		panic(err)

@@ -32,6 +32,11 @@ func NewGame(path string) (g *Game, err error) {
 	return
 }
 
+// CurrentTally returns the current game state
+func (g *Game) CurrentTally() *Tally {
+	return g.tally
+}
+
 // Guess a letter in the game
 func (g *Game) Guess(r rune) (*Tally, error) {
 	if g.tally.Status == Won || g.tally.Status == Lost {
@@ -85,10 +90,5 @@ func inRunes(rr []rune, g rune) bool {
 }
 
 func missingLetters(ll []rune) bool {
-	for _, l := range ll {
-		if l == '-' {
-			return true
-		}
-	}
-	return false
+	return inRunes(ll, '-')
 }
