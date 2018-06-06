@@ -13,8 +13,8 @@ const (
 )
 
 var (
-	errUnderRange = errors.New("Number is under range (<=0)")
-	errOverRange  = errors.New("Number is over range (> 20)")
+	errUnderRange = errors.New("number is under range (<=0)")
+	errOverRange  = errors.New("number is over range (> 20)")
 )
 
 func main() {
