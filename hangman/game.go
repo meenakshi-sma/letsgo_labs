@@ -58,10 +58,5 @@ func inRunes(rr []rune, g rune) bool {
 }
 
 func missingLetters(ll []rune) bool {
-	for _, l := range ll {
-		if l == '-' {
-			return true
-		}
-	}
-	return false
+	return inRunes(ll, '-')
 }
