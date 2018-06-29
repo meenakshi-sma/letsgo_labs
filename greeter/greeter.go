@@ -13,10 +13,11 @@ package greeter
 
 // greeter return a greeting based on name, age and height
 func greeter1(n string, a int, h float32) string {
-	// YOUR_CODE...
+	gret=fmt.snprintf( "Hi %s welcome", n, a, h)
+	
 }
 
 // greeter return a greeting based on name, age and height
 func greeter2(n string, a int, h float32) string {
-	// YOUR_CODE...
+	gret=fmt.snprintf( "Hi %s welcome on your height",n, a, h)
 }
